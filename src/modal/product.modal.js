@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const productSchema = new Schema({
-    name: {
+    productName: {
         type: String,
         required: [true, "Product name is required"],
         index: true,
@@ -12,7 +12,7 @@ const productSchema = new Schema({
         type: String,
         trim: true
     },
-    productImages: {
+    productImage: {
         type: String,
         required: [true, "Product Image is required"]
     },

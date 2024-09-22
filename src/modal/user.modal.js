@@ -1,5 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 const userSchema = new Schema({
     fullName: {
@@ -31,13 +32,11 @@ const userSchema = new Schema({
         trim: true,
         unique: true
     },
-    accessToken: {
+    address: {
         type: String,
-        trim: true
     },
     refreshToken: {
         type: String,
-        trim: true
     },
     cart: {
         type: [Schema.Types.ObjectId],
