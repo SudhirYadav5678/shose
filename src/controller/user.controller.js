@@ -58,6 +58,7 @@ const registerUser = async function (req, res) {
     )
 
     if (!createdUser) {
+        const avatarDelete = await deleteCloudinary(avatar?.url)
         return res.status(500).json({
             success: false,
             message: "Something went wrong while registering the user"
