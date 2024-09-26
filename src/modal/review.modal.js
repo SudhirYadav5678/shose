@@ -1,9 +1,11 @@
 import mongoose, { Schema } from "mongoose";
 
 const reviewSchema = new Schema({
+    rate: {
+        type: String,
+    },
     comment: {
         type: String,
-        require: true
     },
     likeBy: {
         type: Schema.Types.ObjectId,
@@ -14,3 +16,5 @@ const reviewSchema = new Schema({
         ref: "Prouct"
     }
 }, { timestamps: true })
+
+export const Review = mongoose.model("Review", reviewSchema)
